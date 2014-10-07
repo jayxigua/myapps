@@ -3,7 +3,7 @@ package jayxigua.LotteryRiskCalculation.soccer.main;
 import java.util.ArrayList;
 import java.util.List;
 
-import jayxigua.LotteryRiskCalculation.soccer.entity.Exploits;
+import jayxigua.LotteryRiskCalculation.soccer.entity.ExploitsElement;
 import jayxigua.LotteryRiskCalculation.soccer.entity.SoccerMatch;
 import jayxigua.LotteryRiskCalculation.soccer.entity.SoccerTeam;
 import jayxigua.LotteryRiskCalculation.soccer.service.CalculateService;
@@ -56,7 +56,7 @@ public class MainLogic {
 			sm.setVisiting(new SoccerTeam(row.getCell(1).toString(), new Double(row.getCell(4).toString()).intValue(), row.getCell(7).toString(), row
 					.getCell(9).toString()));
 			sm.setOdds(MyNumberUtils.get3DigitFromStr(row.getCell(2).toString()));
-			sm.setLast6EachExploits(new Exploits(row.getCell(5).toString()));
+			sm.setLast6EachExploits(new ExploitsElement(row.getCell(5).toString()));
 		}
 		System.out.println(sm);
 		return sm;

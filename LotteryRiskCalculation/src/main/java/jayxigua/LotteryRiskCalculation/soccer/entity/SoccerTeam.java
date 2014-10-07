@@ -12,17 +12,17 @@ public class SoccerTeam {
 
 	private int ligaLevel;
 
-	private Exploits last10Exploits;
+	private ExploitsElement last10Exploits;
 
-	private Exploits last10homeVisitingExploits;
+	private ExploitsElement last10homeVisitingExploits;
 
 	public SoccerTeam(String name, int ligaLevel, String last10Exploits,
 			String last10homeVisitingExploits) {
 		super();
 		this.name = name;
 		this.ligaLevel = ligaLevel;
-		this.last10Exploits = new Exploits(last10Exploits);
-		this.last10homeVisitingExploits = new Exploits(
+		this.last10Exploits = new ExploitsElement(last10Exploits);
+		this.last10homeVisitingExploits = new ExploitsElement(
 				last10homeVisitingExploits);
 	}
 
@@ -42,20 +42,20 @@ public class SoccerTeam {
 		this.ligaLevel = ligaLevel;
 	}
 
-	public Exploits getLast10Exploits() {
+	public ExploitsElement getLast10Exploits() {
 		return last10Exploits;
 	}
 
-	public void setLast10Exploits(Exploits last10Exploits) {
+	public void setLast10Exploits(ExploitsElement last10Exploits) {
 		this.last10Exploits = last10Exploits;
 	}
 
-	public Exploits getLast10homeVisitingExploits() {
+	public ExploitsElement getLast10homeVisitingExploits() {
 		return last10homeVisitingExploits;
 	}
 
 	public void setLast10homeVisitingExploits(
-			Exploits last10homeVisitingExploits) {
+			ExploitsElement last10homeVisitingExploits) {
 		this.last10homeVisitingExploits = last10homeVisitingExploits;
 	}
 

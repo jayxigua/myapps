@@ -15,7 +15,7 @@ public class SoccerMatch {
 	private SoccerTeam visiting;
 
 	private List<BigDecimal> odds;
-	private Exploits last6EachExploits;
+	private ExploitsElement last6EachExploits;
 
 	public SoccerTeam getHome() {
 		return home;
@@ -41,11 +41,11 @@ public class SoccerMatch {
 		this.odds = odds;
 	}
 
-	public Exploits getLast6EachExploits() {
+	public ExploitsElement getLast6EachExploits() {
 		return last6EachExploits;
 	}
 
-	public void setLast6EachExploits(Exploits last6EachExploits) {
+	public void setLast6EachExploits(ExploitsElement last6EachExploits) {
 		this.last6EachExploits = last6EachExploits;
 	}
 

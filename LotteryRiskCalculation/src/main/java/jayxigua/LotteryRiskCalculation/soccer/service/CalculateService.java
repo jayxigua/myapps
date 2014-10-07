@@ -1,7 +1,7 @@
 package jayxigua.LotteryRiskCalculation.soccer.service;
 
-import jayxigua.LotteryRiskCalculation.soccer.entity.Exploits;
-import jayxigua.LotteryRiskCalculation.soccer.entity.ExploitsFactor;
+import jayxigua.LotteryRiskCalculation.soccer.entity.ExploitsElement;
+import jayxigua.LotteryRiskCalculation.soccer.entity.ExploitsStateValue;
 import jayxigua.LotteryRiskCalculation.soccer.entity.SoccerMatch;
 import jayxigua.LotteryRiskCalculation.soccer.entity.SoccerTeam;
 import jayxigua.LotteryRiskCalculation.soccer.util.MyNumberUtils;
@@ -18,8 +18,8 @@ public class CalculateService {
 	 * @param match
 	 * @return
 	 */
-	public static ExploitsFactor calculateResultProb(SoccerMatch match) {
-		ExploitsFactor ef = new ExploitsFactor();
+	public static ExploitsStateValue calculateResultProb(SoccerMatch match) {
+		ExploitsStateValue ef = new ExploitsStateValue();
 		return ef;
 	}
 
@@ -28,8 +28,8 @@ public class CalculateService {
 	 * 
 	 * @return
 	 */
-	static ExploitsFactor calculateTeamStrength(SoccerTeam team) {
-		ExploitsFactor ef = new ExploitsFactor();
+	static ExploitsStateValue calculateTeamStrength(SoccerTeam team) {
+		ExploitsStateValue ef = new ExploitsStateValue();
 		ef.setWin(MyNumberUtils.getBaseIncrease("", team.getLast10Exploits()));
 		return ef;
 	}
@@ -42,8 +42,8 @@ public class CalculateService {
 	 * @param base
 	 * @return
 	 */
-	static ExploitsFactor exploitsAddition(ExploitsFactor original, Exploits exploits, String base) {
-		ExploitsFactor target = new ExploitsFactor();
+	static ExploitsStateValue exploitsAddition(ExploitsStateValue original, ExploitsElement exploits, String base) {
+		ExploitsStateValue target = new ExploitsStateValue();
 		target.setWin(original.getWin().multiply(MyNumberUtils.getBaseIncrease(base, exploits.getWin().toString())));
 		target.setWin(original.getPlanish().multiply(MyNumberUtils.getBaseIncrease(base, exploits.getPlanish().toString())));
 		target.setWin(original.getLose().multiply(MyNumberUtils.getBaseIncrease(base, exploits.getLose().toString())));
