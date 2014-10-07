@@ -1,6 +1,6 @@
 package jayxigua.LotteryRiskCalculation.soccer.main;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 import jayxigua.LotteryRiskCalculation.soccer.entity.Exploits;
@@ -29,7 +29,7 @@ public class MainLogic {
 	}
 
 	public List<SoccerMatch> getSoccerMatchFromExcel() {
-		List<SoccerMatch> soccerMatchs = Collections.emptyList();
+		List<SoccerMatch> soccerMatchs = new ArrayList<SoccerMatch>();
 		XSSFSheet sheet = MyExcelUtils.loadExcelByXslx("2014-10-07");
 		for (int i = 1; i <= sheet.getLastRowNum(); i++) {
 			XSSFRow row = sheet.getRow(i);
@@ -49,13 +49,14 @@ public class MainLogic {
 	SoccerMatch row2SoccerMatch(XSSFRow row) {
 		SoccerMatch sm = new SoccerMatch();
 		for (int j = 0; j < row.getLastCellNum(); j++) {
-			sm.setHome(new SoccerTeam(row.getCell(0).toString(), Integer.parseInt(row.getCell(3).toString()), row.getCell(6).toString(), row.getCell(8)
+			sm.setHome(new SoccerTeam(row.getCell(0).toString(), new Double(row.getCell(3).toString()).intValue(), row.getCell(6).toString(), row.getCell(8)
 					.toString()));
-			sm.setVisiting(new SoccerTeam(row.getCell(1).toString(), Integer.parseInt(row.getCell(4).toString()), row.getCell(7).toString(), row.getCell(9)
-					.toString()));
+			sm.setVisiting(new SoccerTeam(row.getCell(1).toString(), new Double(row.getCell(4).toString()).intValue(), row.getCell(7).toString(), row
+					.getCell(9).toString()));
 			sm.setOdds(MyNumberUtils.get3DigitFromStr(row.getCell(2).toString()));
 			sm.setLast6EachExploits(new Exploits(row.getCell(5).toString()));
 		}
+		System.out.println(sm);
 		return sm;
 	}
 }
