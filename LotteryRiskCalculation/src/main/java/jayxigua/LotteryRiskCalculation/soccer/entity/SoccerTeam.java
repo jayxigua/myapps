@@ -10,20 +10,18 @@ public class SoccerTeam {
 
 	private String name;
 
-	private int ligaLevel;
+	private Integer ligaLevel;
 
 	private ExploitsElement last10Exploits;
 
 	private ExploitsElement last10homeVisitingExploits;
 
-	public SoccerTeam(String name, int ligaLevel, String last10Exploits,
-			String last10homeVisitingExploits) {
+	public SoccerTeam(String name, int ligaLevel, String last10Exploits, String last10homeVisitingExploits) {
 		super();
 		this.name = name;
 		this.ligaLevel = ligaLevel;
 		this.last10Exploits = new ExploitsElement(last10Exploits);
-		this.last10homeVisitingExploits = new ExploitsElement(
-				last10homeVisitingExploits);
+		this.last10homeVisitingExploits = new ExploitsElement(last10homeVisitingExploits);
 	}
 
 	public String getName() {
@@ -34,11 +32,11 @@ public class SoccerTeam {
 		this.name = name;
 	}
 
-	public int getLigaLevel() {
+	public Integer getLigaLevel() {
 		return ligaLevel;
 	}
 
-	public void setLigaLevel(int ligaLevel) {
+	public void setLigaLevel(Integer ligaLevel) {
 		this.ligaLevel = ligaLevel;
 	}
 
@@ -54,17 +52,14 @@ public class SoccerTeam {
 		return last10homeVisitingExploits;
 	}
 
-	public void setLast10homeVisitingExploits(
-			ExploitsElement last10homeVisitingExploits) {
+	public void setLast10homeVisitingExploits(ExploitsElement last10homeVisitingExploits) {
 		this.last10homeVisitingExploits = last10homeVisitingExploits;
 	}
 
 	@Override
 	public String toString() {
-		return "SoccerTeam [name=" + name + ", ligaLevel=" + ligaLevel
-				+ ", last10Exploits=" + last10Exploits
-				+ ", last10homeVisitingExploits=" + last10homeVisitingExploits
-				+ "]";
+		return "SoccerTeam [name=" + name + ", ligaLevel=" + ligaLevel + ", last10Exploits=" + last10Exploits + ", last10homeVisitingExploits="
+				+ last10homeVisitingExploits + "]";
 	}
 
 }
