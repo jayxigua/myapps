@@ -1,12 +1,16 @@
 package jayxigua.LotteryRiskCalculation.soccer.util;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MyNumberUtils {
 
 	public static String Split = ",";
+
+	static MathContext mc = new MathContext(3, RoundingMode.HALF_UP);
 
 	/**
 	 * 返回（精确到2位小数）数字
@@ -20,8 +24,19 @@ public class MyNumberUtils {
 		String[] ss = str.split(Split);
 		for (String s : ss) {
 			BigDecimal bd = new BigDecimal(s);
-			digit.add(bd.setScale(1, BigDecimal.ROUND_HALF_UP).abs());
+			digit.add(bd.setScale(2, BigDecimal.ROUND_HALF_UP).abs());
 		}
 		return digit;
+	}
+
+	/**
+	 * 
+	 * @param base
+	 * @param increaseValue
+	 * @return
+	 */
+	public static BigDecimal getBaseIncrease(String base, String increaseValue) {
+		BigDecimal bd = new BigDecimal(base).add(new BigDecimal(increaseValue));
+		return bd.divide(new BigDecimal(base), 2, RoundingMode.HALF_UP);
 	}
 }
