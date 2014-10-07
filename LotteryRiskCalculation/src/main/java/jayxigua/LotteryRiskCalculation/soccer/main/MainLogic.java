@@ -1,5 +1,6 @@
 package jayxigua.LotteryRiskCalculation.soccer.main;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,11 +24,25 @@ public class MainLogic {
 		// 1解析Excel文件，获取entity数据
 		List<SoccerMatch> soccerMatchs = getSoccerMatchFromExcel();
 		// 2计算逻辑
+		for (SoccerMatch soccerMatch : soccerMatchs) {
+			calculateMatch(soccerMatch);
+		}
+	}
 
-		// 3展示效果
+	// 2
+	public void calculateMatch(SoccerMatch match) {
 
 	}
 
+	public List<BigDecimal> calculateResultProb(SoccerMatch match) {
+		
+	}
+	
+	List<BigDecimal> calculateTeamStrength(){
+		
+	}
+
+	// 1
 	public List<SoccerMatch> getSoccerMatchFromExcel() {
 		List<SoccerMatch> soccerMatchs = new ArrayList<SoccerMatch>();
 		XSSFSheet sheet = MyExcelUtils.loadExcelByXslx("2014-10-07");
