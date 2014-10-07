@@ -1,1 +1,14 @@
+.metadata
+*.log
+.DS_Store
+*.class
+*.jar
 /bin
+/target
+.eclipse
+.project
+.classpath
+/.settings
+*.settings*
+*.iml
+*/.settings
