@@ -8,7 +8,8 @@ import java.util.List;
 
 public class MyNumberUtils {
 
-	public static String Split = ",";
+	public static String SPLIT = ",";
+	public static String EMPTY = "-";
 	public static int SCALE = 2;
 
 	static MathContext mc = new MathContext(3, RoundingMode.HALF_UP);
@@ -22,7 +23,7 @@ public class MyNumberUtils {
 	 */
 	public static List<BigDecimal> get3DigitFromStr(String str) {
 		List<BigDecimal> digit = new ArrayList<BigDecimal>();
-		String[] ss = str.split(Split);
+		String[] ss = str.split(SPLIT);
 		for (String s : ss) {
 			BigDecimal bd = new BigDecimal(s).setScale(SCALE, RoundingMode.HALF_UP);
 			digit.add(bd);
