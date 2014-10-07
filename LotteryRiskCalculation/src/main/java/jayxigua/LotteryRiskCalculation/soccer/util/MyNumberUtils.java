@@ -9,6 +9,7 @@ import java.util.List;
 public class MyNumberUtils {
 
 	public static String Split = ",";
+	public static int SCALE = 2;
 
 	static MathContext mc = new MathContext(3, RoundingMode.HALF_UP);
 
@@ -23,8 +24,8 @@ public class MyNumberUtils {
 		List<BigDecimal> digit = new ArrayList<BigDecimal>();
 		String[] ss = str.split(Split);
 		for (String s : ss) {
-			BigDecimal bd = new BigDecimal(s);
-			digit.add(bd.setScale(2, BigDecimal.ROUND_HALF_UP).abs());
+			BigDecimal bd = new BigDecimal(s).setScale(SCALE, RoundingMode.HALF_UP);
+			digit.add(bd);
 		}
 		return digit;
 	}
@@ -37,6 +38,6 @@ public class MyNumberUtils {
 	 */
 	public static BigDecimal getBaseIncrease(String base, String increaseValue) {
 		BigDecimal bd = new BigDecimal(base).add(new BigDecimal(increaseValue));
-		return bd.divide(new BigDecimal(base), 2, RoundingMode.HALF_UP);
+		return bd.divide(new BigDecimal(base), SCALE, RoundingMode.HALF_UP);
 	}
 }
