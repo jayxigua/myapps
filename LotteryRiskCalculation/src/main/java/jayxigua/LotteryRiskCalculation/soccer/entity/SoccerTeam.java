@@ -1,6 +1,5 @@
 package jayxigua.LotteryRiskCalculation.soccer.entity;
 
-
 /**
  * 球队信息
  * 
@@ -16,6 +15,16 @@ public class SoccerTeam {
 	private Exploits last10Exploits;
 
 	private Exploits last10homeVisitingExploits;
+
+	public SoccerTeam(String name, int ligaLevel, String last10Exploits,
+			String last10homeVisitingExploits) {
+		super();
+		this.name = name;
+		this.ligaLevel = ligaLevel;
+		this.last10Exploits = new Exploits(last10Exploits);
+		this.last10homeVisitingExploits = new Exploits(
+				last10homeVisitingExploits);
+	}
 
 	public String getName() {
 		return name;
@@ -45,7 +54,8 @@ public class SoccerTeam {
 		return last10homeVisitingExploits;
 	}
 
-	public void setLast10homeVisitingExploits(Exploits last10homeVisitingExploits) {
+	public void setLast10homeVisitingExploits(
+			Exploits last10homeVisitingExploits) {
 		this.last10homeVisitingExploits = last10homeVisitingExploits;
 	}
 
@@ -57,5 +67,4 @@ public class SoccerTeam {
 				+ "]";
 	}
 
-	
 }

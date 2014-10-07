@@ -17,8 +17,6 @@ public class SoccerMatch {
 	private List<BigDecimal> odds;
 	private Exploits last6EachExploits;
 
-	private int ligaLevelDiff;
-
 	public SoccerTeam getHome() {
 		return home;
 	}
@@ -51,19 +49,5 @@ public class SoccerMatch {
 		this.last6EachExploits = last6EachExploits;
 	}
 
-	public int getLigaLevelDiff() {
-		return ligaLevelDiff;
-	}
-
-	public void setLigaLevelDiff(int ligaLevelDiff) {
-		this.ligaLevelDiff = ligaLevelDiff;
-	}
-
-	@Override
-	public String toString() {
-		return "SoccerMatch [home=" + home + ", visiting=" + visiting
-				+ ", odds=" + odds + ", last6EachExploits=" + last6EachExploits
-				+ ", ligaLevelDiff=" + ligaLevelDiff + "]";
-	}
 
 }
