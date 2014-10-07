@@ -1,12 +1,12 @@
 package jayxigua.LotteryRiskCalculation.soccer.main;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 import jayxigua.LotteryRiskCalculation.soccer.entity.Exploits;
 import jayxigua.LotteryRiskCalculation.soccer.entity.SoccerMatch;
 import jayxigua.LotteryRiskCalculation.soccer.entity.SoccerTeam;
+import jayxigua.LotteryRiskCalculation.soccer.service.CalculateService;
 import jayxigua.LotteryRiskCalculation.soccer.util.MyExcelUtils;
 import jayxigua.LotteryRiskCalculation.soccer.util.MyNumberUtils;
 
@@ -25,21 +25,8 @@ public class MainLogic {
 		List<SoccerMatch> soccerMatchs = getSoccerMatchFromExcel();
 		// 2计算逻辑
 		for (SoccerMatch soccerMatch : soccerMatchs) {
-			calculateMatch(soccerMatch);
+			CalculateService.calculateMatch(soccerMatch);
 		}
-	}
-
-	// 2
-	public void calculateMatch(SoccerMatch match) {
-
-	}
-
-	public List<BigDecimal> calculateResultProb(SoccerMatch match) {
-		
-	}
-	
-	List<BigDecimal> calculateTeamStrength(){
-		
 	}
 
 	// 1
