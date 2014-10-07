@@ -49,5 +49,11 @@ public class SoccerMatch {
 		this.last6EachExploits = last6EachExploits;
 	}
 
+	@Override
+	public String toString() {
+		return "SoccerMatch [home=" + home + ", visiting=" + visiting + ", odds=" + odds + ", last6EachExploits=" + last6EachExploits + "]";
+	}
+
+	
 
 }

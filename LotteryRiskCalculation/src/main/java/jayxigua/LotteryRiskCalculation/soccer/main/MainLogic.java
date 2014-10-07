@@ -3,10 +3,12 @@ package jayxigua.LotteryRiskCalculation.soccer.main;
 import java.util.Collections;
 import java.util.List;
 
+import jayxigua.LotteryRiskCalculation.soccer.entity.Exploits;
 import jayxigua.LotteryRiskCalculation.soccer.entity.SoccerMatch;
+import jayxigua.LotteryRiskCalculation.soccer.entity.SoccerTeam;
 import jayxigua.LotteryRiskCalculation.soccer.util.MyExcelUtils;
+import jayxigua.LotteryRiskCalculation.soccer.util.MyNumberUtils;
 
-import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 
@@ -40,13 +42,19 @@ public class MainLogic {
 	 * 解析每行数据至“比赛实体”
 	 * 
 	 * @param row
-	 *            as 哈特力普 谢菲尔德联队 4.2,3.55,1.66 2 3 2,1,3 2,2,6 6,2,2 2,2,6 3,4,3
+	 *            as 0:哈特力普 1:谢菲尔德联队 2:4.2,3.55,1.66 3:2 4:3 5:2,1,3 6:2,2,6
+	 *            7:6,2,2 8:2,2,6 9:3,4,3
 	 * @return
 	 */
 	SoccerMatch row2SoccerMatch(XSSFRow row) {
 		SoccerMatch sm = new SoccerMatch();
 		for (int j = 0; j < row.getLastCellNum(); j++) {
-			
+			sm.setHome(new SoccerTeam(row.getCell(0).toString(), Integer.parseInt(row.getCell(3).toString()), row.getCell(6).toString(), row.getCell(8)
+					.toString()));
+			sm.setVisiting(new SoccerTeam(row.getCell(1).toString(), Integer.parseInt(row.getCell(4).toString()), row.getCell(7).toString(), row.getCell(9)
+					.toString()));
+			sm.setOdds(MyNumberUtils.get3DigitFromStr(row.getCell(2).toString()));
+			sm.setLast6EachExploits(new Exploits(row.getCell(5).toString()));
 		}
 		return sm;
 	}
