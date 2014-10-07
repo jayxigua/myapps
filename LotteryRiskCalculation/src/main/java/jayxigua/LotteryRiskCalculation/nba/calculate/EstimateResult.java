@@ -1,6 +1,6 @@
-package jayxigua.LotteryRiskCalculation.calculate;
+package jayxigua.LotteryRiskCalculation.nba.calculate;
 
-import jayxigua.LotteryRiskCalculation.util.NumberUtil;
+import jayxigua.LotteryRiskCalculation.nba.util.NumberUtil;
 
 /**
  * @author jianbin.zou 2013-12-31

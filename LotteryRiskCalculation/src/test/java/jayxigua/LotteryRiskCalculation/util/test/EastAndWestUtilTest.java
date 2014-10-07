@@ -1,6 +1,6 @@
 package jayxigua.LotteryRiskCalculation.util.test;
 
-import jayxigua.LotteryRiskCalculation.util.EastAndWestUtil;
+import jayxigua.LotteryRiskCalculation.nba.util.EastAndWestUtil;
 
 import org.junit.Test;
 

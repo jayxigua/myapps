@@ -1,6 +1,6 @@
-package jayxigua.LotteryRiskCalculation.main;
+package jayxigua.LotteryRiskCalculation.nba.main;
 
-import jayxigua.LotteryRiskCalculation.datasource.rankinginfo.TeamCompetitionInfo;
+import jayxigua.LotteryRiskCalculation.nba.datasource.rankinginfo.TeamCompetitionInfo;
 
 /**
  * @author jianbin.zou 2014-1-5

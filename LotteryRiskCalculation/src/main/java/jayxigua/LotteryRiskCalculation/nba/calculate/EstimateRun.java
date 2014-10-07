@@ -1,8 +1,8 @@
-package jayxigua.LotteryRiskCalculation.calculate;
+package jayxigua.LotteryRiskCalculation.nba.calculate;
 
-import jayxigua.LotteryRiskCalculation.entity.NbaCompetition;
-import jayxigua.LotteryRiskCalculation.entity.CompetitionTeam;
-import jayxigua.LotteryRiskCalculation.util.TeamUtil;
+import jayxigua.LotteryRiskCalculation.nba.entity.CompetitionTeam;
+import jayxigua.LotteryRiskCalculation.nba.entity.NbaCompetition;
+import jayxigua.LotteryRiskCalculation.nba.util.TeamUtil;
 
 public class EstimateRun {
 

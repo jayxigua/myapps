@@ -1,4 +1,4 @@
-package jayxigua.LotteryRiskCalculation.entity;
+package jayxigua.LotteryRiskCalculation.nba.entity;
 
 /**
  * 一支NBA球队

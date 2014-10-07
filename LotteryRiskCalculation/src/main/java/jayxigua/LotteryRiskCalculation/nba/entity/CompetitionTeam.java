@@ -1,4 +1,4 @@
-package jayxigua.LotteryRiskCalculation.entity;
+package jayxigua.LotteryRiskCalculation.nba.entity;
 
 import java.util.Date;
 

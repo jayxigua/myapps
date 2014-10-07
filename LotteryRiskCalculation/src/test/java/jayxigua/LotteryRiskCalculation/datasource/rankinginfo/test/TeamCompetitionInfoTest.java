@@ -1,6 +1,6 @@
 package jayxigua.LotteryRiskCalculation.datasource.rankinginfo.test;
 
-import jayxigua.LotteryRiskCalculation.datasource.rankinginfo.TeamCompetitionInfo;
+import jayxigua.LotteryRiskCalculation.nba.datasource.rankinginfo.TeamCompetitionInfo;
 
 import org.junit.Test;
 

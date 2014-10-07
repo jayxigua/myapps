@@ -1,8 +1,8 @@
-package jayxigua.LotteryRiskCalculation.calculate;
+package jayxigua.LotteryRiskCalculation.nba.calculate;
 
-import jayxigua.LotteryRiskCalculation.entity.CompetitionTeam;
-import jayxigua.LotteryRiskCalculation.entity.NbaTeam;
-import jayxigua.LotteryRiskCalculation.util.EastAndWestUtil;
+import jayxigua.LotteryRiskCalculation.nba.entity.CompetitionTeam;
+import jayxigua.LotteryRiskCalculation.nba.entity.NbaTeam;
+import jayxigua.LotteryRiskCalculation.nba.util.EastAndWestUtil;
 
 /**
  * @author jianbin.zou 2013-12-22

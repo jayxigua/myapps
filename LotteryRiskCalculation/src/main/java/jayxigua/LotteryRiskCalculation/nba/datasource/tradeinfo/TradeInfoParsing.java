@@ -1,4 +1,4 @@
-package jayxigua.LotteryRiskCalculation.datasource.tradeinfo;
+package jayxigua.LotteryRiskCalculation.nba.datasource.tradeinfo;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

@@ -1,8 +1,8 @@
-package jayxigua.LotteryRiskCalculation.exhibition;
+package jayxigua.LotteryRiskCalculation.nba.exhibition;
 
-import jayxigua.LotteryRiskCalculation.calculate.EarningsEstimate;
-import jayxigua.LotteryRiskCalculation.calculate.EstimateResult;
-import jayxigua.LotteryRiskCalculation.util.NumberUtil;
+import jayxigua.LotteryRiskCalculation.nba.calculate.EarningsEstimate;
+import jayxigua.LotteryRiskCalculation.nba.calculate.EstimateResult;
+import jayxigua.LotteryRiskCalculation.nba.util.NumberUtil;
 
 public class EstimateResultShow {
 

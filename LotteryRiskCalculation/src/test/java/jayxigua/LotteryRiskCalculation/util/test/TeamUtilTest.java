@@ -1,6 +1,6 @@
 package jayxigua.LotteryRiskCalculation.util.test;
 
-import jayxigua.LotteryRiskCalculation.util.TeamUtil;
+import jayxigua.LotteryRiskCalculation.nba.util.TeamUtil;
 
 import org.junit.Test;
 

@@ -1,6 +1,6 @@
-package jayxigua.LotteryRiskCalculation.util;
+package jayxigua.LotteryRiskCalculation.nba.util;
 
-import jayxigua.LotteryRiskCalculation.entity.NbaTeam;
+import jayxigua.LotteryRiskCalculation.nba.entity.NbaTeam;
 
 public class TeamUtil {
 

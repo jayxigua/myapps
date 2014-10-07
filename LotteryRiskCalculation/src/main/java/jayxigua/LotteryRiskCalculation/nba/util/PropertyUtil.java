@@ -1,4 +1,4 @@
-package jayxigua.LotteryRiskCalculation.util;
+package jayxigua.LotteryRiskCalculation.nba.util;
 
 import java.io.File;
 import java.io.FileInputStream;

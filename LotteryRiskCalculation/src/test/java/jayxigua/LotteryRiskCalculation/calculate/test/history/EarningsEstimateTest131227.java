@@ -3,8 +3,8 @@ package jayxigua.LotteryRiskCalculation.calculate.test.history;
 import java.util.ArrayList;
 import java.util.List;
 
-import jayxigua.LotteryRiskCalculation.calculate.EstimateRun;
-import jayxigua.LotteryRiskCalculation.entity.NbaCompetition;
+import jayxigua.LotteryRiskCalculation.nba.calculate.EstimateRun;
+import jayxigua.LotteryRiskCalculation.nba.entity.NbaCompetition;
 
 import org.junit.Test;
 

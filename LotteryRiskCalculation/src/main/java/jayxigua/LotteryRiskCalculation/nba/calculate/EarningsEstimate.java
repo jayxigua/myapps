@@ -1,6 +1,6 @@
-package jayxigua.LotteryRiskCalculation.calculate;
+package jayxigua.LotteryRiskCalculation.nba.calculate;
 
-import jayxigua.LotteryRiskCalculation.entity.CompetitionTeam;
+import jayxigua.LotteryRiskCalculation.nba.entity.CompetitionTeam;
 
 public class EarningsEstimate {
 

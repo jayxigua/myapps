@@ -1,4 +1,4 @@
-package jayxigua.LotteryRiskCalculation.datasource.rankinginfo;
+package jayxigua.LotteryRiskCalculation.nba.datasource.rankinginfo;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

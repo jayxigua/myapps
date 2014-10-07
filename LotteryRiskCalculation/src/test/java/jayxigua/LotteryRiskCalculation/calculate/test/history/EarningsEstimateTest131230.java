@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import jayxigua.LotteryRiskCalculation.calculate.EstimateResult;
-import jayxigua.LotteryRiskCalculation.calculate.EstimateRun;
-import jayxigua.LotteryRiskCalculation.entity.NbaCompetition;
+import jayxigua.LotteryRiskCalculation.nba.calculate.EstimateResult;
+import jayxigua.LotteryRiskCalculation.nba.calculate.EstimateRun;
+import jayxigua.LotteryRiskCalculation.nba.entity.NbaCompetition;
 
 import org.junit.Test;
 
