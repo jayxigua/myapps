@@ -1,8 +1,6 @@
 package jayxigua.LotteryRiskCalculation.soccer.service;
 
-import java.math.BigDecimal;
-import java.util.List;
-
+import jayxigua.LotteryRiskCalculation.soccer.entity.ExploitsFactor;
 import jayxigua.LotteryRiskCalculation.soccer.entity.SoccerMatch;
 
 public class CalculateService {
@@ -17,8 +15,9 @@ public class CalculateService {
 	 * @param match
 	 * @return
 	 */
-	public static List<BigDecimal> calculateResultProb(SoccerMatch match) {
-
+	public static ExploitsFactor calculateResultProb(SoccerMatch match) {
+		ExploitsFactor ef = new ExploitsFactor();
+		return ef;
 	}
 
 	/**
@@ -26,7 +25,8 @@ public class CalculateService {
 	 * 
 	 * @return
 	 */
-	static List<BigDecimal> calculateTeamStrength() {
-
+	static ExploitsFactor calculateTeamStrength() {
+		ExploitsFactor ef = new ExploitsFactor();
+		return ef;
 	}
 }
