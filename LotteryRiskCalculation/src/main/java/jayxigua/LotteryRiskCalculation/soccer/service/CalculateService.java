@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import jayxigua.LotteryRiskCalculation.soccer.entity.ExploitsStateValue;
 import jayxigua.LotteryRiskCalculation.soccer.entity.SoccerMatch;
 import jayxigua.LotteryRiskCalculation.soccer.entity.SoccerTeam;
+import jayxigua.LotteryRiskCalculation.soccer.util.LocalLogUtils;
 import jayxigua.LotteryRiskCalculation.soccer.util.MyNumberUtils;
 
 public class CalculateService {
@@ -31,8 +32,8 @@ public class CalculateService {
 		ExploitsStateValue esvV = calculateTeamStrength(match.getVisiting());
 		esvH.setWin(esvV.getWin().multiply(MyNumberUtils.getBaseIncrease(LIGA_LVEEL_BASE, match.getVisiting().getLigaLevel().toString())));
 
-		System.out.println(esvH);
-		System.out.println(esvV);
+		LocalLogUtils.debugPrint(esvH.toString());
+		LocalLogUtils.debugPrint(esvV.toString());
 
 		BigDecimal last6W = MyNumberUtils.getBaseIncrease(LAST_6_EACH_BASE, match.getLast6EachExploits().getWin().toString());
 		BigDecimal last6P = MyNumberUtils.getBaseIncrease(LAST_6_EACH_BASE, match.getLast6EachExploits().getPlanish().toString());
@@ -42,9 +43,9 @@ public class CalculateService {
 		BigDecimal esvP = esvH.getPlanish().multiply(esvV.getPlanish());
 		BigDecimal esvL = esvH.getLose().multiply(esvV.getWin());
 
-		System.out.println(last6W + "," + esvW + "," + last6W.multiply(esvW));
-		System.out.println(last6P + "," + esvP + "," + last6P.multiply(esvW));
-		System.out.println(last6L + "," + esvL + "," + last6L.multiply(esvW));
+		LocalLogUtils.debugPrint(last6W + "," + esvW + "," + last6W.multiply(esvW));
+		LocalLogUtils.debugPrint(last6P + "," + esvP + "," + last6P.multiply(esvW));
+		LocalLogUtils.debugPrint(last6L + "," + esvL + "," + last6L.multiply(esvW));
 
 	}
 
