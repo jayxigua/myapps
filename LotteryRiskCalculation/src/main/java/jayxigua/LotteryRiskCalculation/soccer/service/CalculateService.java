@@ -30,7 +30,7 @@ public class CalculateService {
 	 */
 	public static CalculateProResult calculateResultProb(SoccerMatch match) {
 		CalculateProResult cpr = new CalculateProResult();
-
+		LocalLogUtils.infoPrint("home name " + match.getHome().getName() + ", visit name " + match.getVisiting().getName());
 		ExploitsStateValue esvH = calculateTeamStrength(match.getHome());
 		ExploitsStateValue esvV = calculateTeamStrength(match.getVisiting());
 		LocalLogUtils.infoPrint("esvH (before LIGA_LVEEL_BASE): " + esvH.toString());
@@ -60,6 +60,8 @@ public class CalculateService {
 		cpr.setLast6WEsv(new ExploitsStateValue(last6W, last6P, last6L));
 
 		LocalLogUtils.infoPrint("calculateResultProb-CalculateProResult :" + cpr);
+		LocalLogUtils.infoPrint("calculateResultProb-esvCombine :" + cpr.esvCombine());
+		LocalLogUtils.infoPrint("=======================================");
 		return cpr;
 
 	}
