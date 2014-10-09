@@ -34,14 +34,16 @@ public class CalculateService {
 
 		LocalLogUtils.debugPrint("esvH " + esvH.toString());
 		LocalLogUtils.debugPrint("esvV " + esvV.toString());
+		LocalLogUtils.debugPrint("getLast6EachExploits " + match.getLast6EachExploits().toString());
+
+		// 主队胜利概率：主队胜*客队负值
+		BigDecimal esvW = esvH.getWin().multiply(esvV.getLose());
+		BigDecimal esvP = esvH.getPlanish().multiply(esvV.getPlanish());
+		BigDecimal esvL = esvH.getLose().multiply(esvV.getWin());
 
 		BigDecimal last6W = MyNumberUtils.getBaseIncrease(LAST_6_EACH_BASE, match.getLast6EachExploits().getWin().toString());
 		BigDecimal last6P = MyNumberUtils.getBaseIncrease(LAST_6_EACH_BASE, match.getLast6EachExploits().getPlanish().toString());
 		BigDecimal last6L = MyNumberUtils.getBaseIncrease(LAST_6_EACH_BASE, match.getLast6EachExploits().getLose().toString());
-
-		BigDecimal esvW = esvH.getWin().multiply(esvV.getLose());
-		BigDecimal esvP = esvH.getPlanish().multiply(esvV.getPlanish());
-		BigDecimal esvL = esvH.getLose().multiply(esvV.getWin());
 
 		LocalLogUtils.debugPrint(last6W + "," + esvW + "," + last6W.multiply(esvW));
 		LocalLogUtils.debugPrint(last6P + "," + esvP + "," + last6P.multiply(esvW));

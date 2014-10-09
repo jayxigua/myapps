@@ -7,6 +7,7 @@ import jayxigua.LotteryRiskCalculation.soccer.entity.ExploitsElement;
 import jayxigua.LotteryRiskCalculation.soccer.entity.SoccerMatch;
 import jayxigua.LotteryRiskCalculation.soccer.entity.SoccerTeam;
 import jayxigua.LotteryRiskCalculation.soccer.service.CalculateService;
+import jayxigua.LotteryRiskCalculation.soccer.util.LocalLogUtils;
 import jayxigua.LotteryRiskCalculation.soccer.util.MyExcelUtils;
 import jayxigua.LotteryRiskCalculation.soccer.util.MyNumberUtils;
 
@@ -58,7 +59,7 @@ public class MainLogic {
 			sm.setOdds(MyNumberUtils.get3DigitFromStr(row.getCell(2).toString()));
 			sm.setLast6EachExploits(new ExploitsElement(row.getCell(5).toString()));
 		}
-		System.out.println(sm);
+		LocalLogUtils.debugPrint(sm.toString());
 		return sm;
 	}
 }

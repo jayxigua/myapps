@@ -39,6 +39,8 @@ public class MyNumberUtils {
 	 */
 	public static BigDecimal getBaseIncrease(String base, String increaseValue) {
 		BigDecimal bd = new BigDecimal(base).add(new BigDecimal(increaseValue));
-		return bd.divide(new BigDecimal(base), SCALE, RoundingMode.HALF_UP);
+		BigDecimal rt = bd.divide(new BigDecimal(base), SCALE, RoundingMode.HALF_UP);
+		LocalLogUtils.debugPrint("getBaseIncrease: rt " + rt.toString() + ",base " + base + "," + increaseValue);
+		return rt;
 	}
 }
