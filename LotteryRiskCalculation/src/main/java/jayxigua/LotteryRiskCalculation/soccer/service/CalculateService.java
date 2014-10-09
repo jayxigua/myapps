@@ -30,10 +30,10 @@ public class CalculateService {
 		ExploitsStateValue esvH = calculateTeamStrength(match.getHome());
 		esvH.setWin(esvH.getWin().multiply(MyNumberUtils.getBaseIncrease(LIGA_LVEEL_BASE, match.getHome().getLigaLevel().toString())));
 		ExploitsStateValue esvV = calculateTeamStrength(match.getVisiting());
-		esvH.setWin(esvV.getWin().multiply(MyNumberUtils.getBaseIncrease(LIGA_LVEEL_BASE, match.getVisiting().getLigaLevel().toString())));
+		esvV.setWin(esvV.getWin().multiply(MyNumberUtils.getBaseIncrease(LIGA_LVEEL_BASE, match.getVisiting().getLigaLevel().toString())));
 
-		LocalLogUtils.debugPrint(esvH.toString());
-		LocalLogUtils.debugPrint(esvV.toString());
+		LocalLogUtils.debugPrint("esvH " + esvH.toString());
+		LocalLogUtils.debugPrint("esvV " + esvV.toString());
 
 		BigDecimal last6W = MyNumberUtils.getBaseIncrease(LAST_6_EACH_BASE, match.getLast6EachExploits().getWin().toString());
 		BigDecimal last6P = MyNumberUtils.getBaseIncrease(LAST_6_EACH_BASE, match.getLast6EachExploits().getPlanish().toString());
