@@ -23,7 +23,7 @@ public class MyNumberUtils {
 	 */
 	public static List<BigDecimal> get3DigitFromStr(String str) {
 		List<BigDecimal> digit = new ArrayList<BigDecimal>();
-		String[] ss = str.split(SPLIT);
+		String[] ss = str.replaceAll("，|，|-", SPLIT).split(SPLIT);
 		for (String s : ss) {
 			BigDecimal bd = new BigDecimal(s).setScale(SCALE, RoundingMode.HALF_UP);
 			digit.add(bd);

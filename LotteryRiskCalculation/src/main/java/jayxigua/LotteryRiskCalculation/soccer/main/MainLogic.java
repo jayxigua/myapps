@@ -1,6 +1,9 @@
 package jayxigua.LotteryRiskCalculation.soccer.main;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import jayxigua.LotteryRiskCalculation.soccer.entity.ExploitsElement;
@@ -30,10 +33,12 @@ public class MainLogic {
 		}
 	}
 
+	DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+
 	// 1
 	public List<SoccerMatch> getSoccerMatchFromExcel() {
 		List<SoccerMatch> soccerMatchs = new ArrayList<SoccerMatch>();
-		XSSFSheet sheet = MyExcelUtils.loadExcelByXslx("2014-10-07");
+		XSSFSheet sheet = MyExcelUtils.loadExcelByXslx(df.format(new Date()));
 		for (int i = 1; i <= sheet.getLastRowNum(); i++) {
 			XSSFRow row = sheet.getRow(i);
 			soccerMatchs.add(row2SoccerMatch(row));
