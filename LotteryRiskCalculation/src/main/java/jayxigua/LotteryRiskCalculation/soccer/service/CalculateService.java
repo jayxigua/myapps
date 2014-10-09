@@ -56,7 +56,7 @@ public class CalculateService {
 	 */
 	static ExploitsStateValue calculateTeamStrength(SoccerTeam team) {
 		ExploitsStateValue esv = new ExploitsStateValue();
-		return esv.exploitsAddition(team.getLast10Exploits(), "10").exploitsAddition(team.getLast10homeVisitingExploits(), "10");
+		return esv.exploitsAddition(team.getLast10Exploits(), LAST_10_BASE).exploitsAddition(team.getLast10homeVisitingExploits(), LAST_10_HOME_VIST_BASE);
 	}
 
 }
