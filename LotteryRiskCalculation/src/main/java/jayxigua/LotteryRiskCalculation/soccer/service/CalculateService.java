@@ -1,6 +1,7 @@
 package jayxigua.LotteryRiskCalculation.soccer.service;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import jayxigua.LotteryRiskCalculation.soccer.entity.CalculateProResult;
 import jayxigua.LotteryRiskCalculation.soccer.entity.ExploitsStateValue;
@@ -15,7 +16,7 @@ public class CalculateService {
 	public static String LAST_10_HOME_VIST_BASE = "20";
 	public static String LAST_6_EACH_BASE = "6";
 
-	public static String LIGA_LVEEL_BASE = "3";
+	public static String LIGA_LVEEL_BASE = "5";
 
 	public static void calculateMatch(SoccerMatch match) {
 		calculateResultProb(match);
@@ -31,12 +32,17 @@ public class CalculateService {
 		CalculateProResult cpr = new CalculateProResult();
 
 		ExploitsStateValue esvH = calculateTeamStrength(match.getHome());
-		esvH.setWin(esvH.getWin().multiply(MyNumberUtils.getBaseIncrease(LIGA_LVEEL_BASE, match.getHome().getLigaLevel().toString())));
-		esvH.setLose(esvH.getLose().divide(MyNumberUtils.getBaseIncrease(LIGA_LVEEL_BASE, match.getHome().getLigaLevel().toString())));
-
 		ExploitsStateValue esvV = calculateTeamStrength(match.getVisiting());
+		LocalLogUtils.infoPrint("esvH (before LIGA_LVEEL_BASE): " + esvH.toString());
+		LocalLogUtils.infoPrint("esvV (before LIGA_LVEEL_BASE):  " + esvV.toString());
+
+		// TODO abstract fun
+		esvH.setWin(esvH.getWin().multiply(MyNumberUtils.getBaseIncrease(LIGA_LVEEL_BASE, match.getHome().getLigaLevel().toString())));
+		esvH.setLose(esvH.getLose().divide(MyNumberUtils.getBaseIncrease(LIGA_LVEEL_BASE, match.getHome().getLigaLevel().toString()), MyNumberUtils.SCALE,
+				RoundingMode.HALF_UP));
 		esvV.setWin(esvV.getWin().multiply(MyNumberUtils.getBaseIncrease(LIGA_LVEEL_BASE, match.getVisiting().getLigaLevel().toString())));
-		esvV.setLose(esvV.getLose().divide(MyNumberUtils.getBaseIncrease(LIGA_LVEEL_BASE, match.getHome().getLigaLevel().toString())));
+		esvV.setLose(esvV.getLose().divide(MyNumberUtils.getBaseIncrease(LIGA_LVEEL_BASE, match.getHome().getLigaLevel().toString()), MyNumberUtils.SCALE,
+				RoundingMode.HALF_UP));
 
 		LocalLogUtils.infoPrint("esvH " + esvH.toString());
 		LocalLogUtils.infoPrint("esvV " + esvV.toString());
